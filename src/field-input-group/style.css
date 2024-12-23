@@ -1,0 +1,21 @@
+.field-input-group {
+	background-color: white;
+	border: 1px solid lightgrey;
+	border-radius: 0.25rem;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	font-size: 0.875em;
+	gap: 0.25rem;
+	line-height: normal;
+	padding: 0.5rem;
+
+	&>* {
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	.field.field-error.show-field-error & {
+		border-color: darkred;
+	}
+}

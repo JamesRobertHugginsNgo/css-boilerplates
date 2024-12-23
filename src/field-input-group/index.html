@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../field/style.css">
+	<link rel="stylesheet" href="../page-width/style.css">
+	<link rel="stylesheet" href="style.css">
+	<style>
+		body {
+			margin: 0;
+		}
+
+		main {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+
+		.field {
+			margin-bottom: 1rem;
+			margin-top: 1rem;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<div class="page-width">
+			<fieldset class="field">
+				<legend class="field-label">Radio Field <span>(optional)</span></legend>
+				<span class="field-help-text">Help text</span>
+				<span class="field-input-group">
+					<span>
+						<input name="radio" type="radio" id="radio-1">
+						<label for="radio-1">Radio 1</label>
+					</span>
+					<span>
+						<input name="radio" type="radio" id="radio-2">
+						<label for="radio-2">Radio 2</label>
+					</span>
+					<span>
+						<input name="radio" type="radio" id="radio-3">
+						<label for="radio-3">Radio 3</label>
+					</span>
+				</span>
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</fieldset>
+
+			<fieldset class="field field-error show-field-error">
+				<legend class="field-label">Radio Field With Error <span>(optional)</span></legend>
+				<span class="field-help-text">Help text</span>
+				<span class="field-input-group">
+					<span>
+						<input name="radio-with-error" type="radio" id="radio-with-error-1">
+						<label for="radio-with-error-1">Radio 1</label>
+					</span>
+					<span>
+						<input name="radio-with-error" type="radio" id="radio-with-error-2">
+						<label for="radio-with-error-2">Radio 2</label>
+					</span>
+					<span>
+						<input name="radio-with-error" type="radio" id="radio-with-error-3">
+						<label for="radio-with-error-3">Radio 3</label>
+					</span>
+				</span>
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text">Error text</span>
+			</fieldset>
+
+			<fieldset class="field">
+				<legend class="field-label">Checkbox Field <span>(optional)</span></legend>
+				<span class="field-help-text">Help text</span>
+				<span class="field-input-group">
+					<span>
+						<input name="checkbox" type="checkbox" id="checkbox-1">
+						<label for="checkbox-1">Checkbox 1</label>
+					</span>
+					<span>
+						<input name="checkbox" type="checkbox" id="checkbox-2">
+						<label for="checkbox-2">Checkbox 2</label>
+					</span>
+					<span>
+						<input name="checkbox" type="checkbox" id="checkbox-3">
+						<label for="checkbox-3">Checkbox 3</label>
+					</span>
+				</span>
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</fieldset>
+		</div>
+	</main>
+</body>
+
+</html>

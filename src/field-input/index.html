@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../field/style.css">
+	<link rel="stylesheet" href="../page-width/style.css">
+	<link rel="stylesheet" href="style.css">
+	<style>
+		body {
+			margin: 0;
+		}
+
+		main {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+
+		.field {
+			margin-bottom: 1rem;
+			margin-top: 1rem;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<div class="page-width">
+			<div class="field">
+				<label for="text-field" class="field-label">Text Field <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<input name="text-field" type="text" class="field-input" id="text-field">
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</div>
+
+			<div class="field">
+				<label for="disabled-text-field" class="field-label">Disabled Text Field <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<input disabled name="disabled-text-field" type="text" value="Text value" class="field-input" id="disabled-text-field">
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</div>
+
+			<div class="field">
+				<label for="readonly-text-field" class="field-label">Readonly Text Field <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<input name="readonly-text-field" readonly type="text" value="Text value" class="field-input" id="readonly-text-field">
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</div>
+
+			<div class="field field-error show-field-error">
+				<label for="text-field-with-error" class="field-label">Text Field With Error <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<input name="text-field-with-error" type="text" class="field-input" id="text-field-with-error">
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text">Error text</span>
+			</div>
+
+			<div class="field">
+				<label for="number-field" class="field-label">Number Field <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<input name="number-field" type="number" class="field-input field-input-currency" id="number-field">
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</div>
+
+			<div class="field">
+				<label for="search-field" class="field-label">Search Field <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<input name="search-field" type="search" class="field-input field-input-currency" id="search-field">
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</div>
+
+			<div class="field">
+				<label for="select-field" class="field-label">Select Field <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<select name="select-field" class="field-input" id="select-field">
+					<option value="">Select&hellip;</option>
+					<option value="Option 1">Option 1</option>
+					<option value="Option 2">Option 2</option>
+				</select>
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</div>
+
+			<div class="field">
+				<label for="multi-select-field" class="field-label">Multi Select Field <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<select multiple name="multi-select-field" class="field-input" id="multi-select-field">
+					<option value="Option 1">Option 1</option>
+					<option value="Option 2">Option 2</option>
+					<option value="Option 3">Option 3</option>
+					<option value="Option 4">Option 4</option>
+				</select>
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</div>
+
+			<div class="field">
+				<label class="field-label">Textarea Field <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<textarea class="field-input"></textarea>
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

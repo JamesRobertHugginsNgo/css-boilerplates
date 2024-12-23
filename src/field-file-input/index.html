@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../field/style.css">
+	<link rel="stylesheet" href="../page-width/style.css">
+	<link rel="stylesheet" href="style.css">
+	<style>
+		body {
+			margin: 0;
+		}
+
+		main {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+
+		.field {
+			margin-bottom: 1rem;
+			margin-top: 1rem;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<div class="page-width">
+			<div class="field">
+				<label for="file-field" class="field-label">File Field <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<input name="file-field" type="file" class="field-file-input" id="file-field">
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</div>
+
+			<div class="field">
+				<label for="disabled-file-field" class="field-label">Disabled File Field <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<input disabled name="disabled-file-field" type="file" value="Text value" class="field-file-input" id="disabled-file-field">
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text"></span>
+			</div>
+
+			<div class="field field-error show-field-error">
+				<label for="file-field-with-error" class="field-label">File Field With Error <span>(optional)</span></label>
+				<span class="field-help-text">Help text</span>
+				<input name="file-field-with-error" type="file" class="field-file-input" id="file-field-with-error">
+				<span class="field-help-text">Help text</span>
+				<span class="field-error-text">Error text</span>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>
