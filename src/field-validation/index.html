@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../field/style.css">
+	<link rel="stylesheet" href="../field-button/style.css">
+	<link rel="stylesheet" href="../field-file-input/style.css">
+	<link rel="stylesheet" href="../field-input/style.css">
+	<link rel="stylesheet" href="../field-input-group/style.css">
+	<link rel="stylesheet" href="../page-width/style.css">
+	<style>
+		body {
+			margin: 0;
+		}
+
+		main {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+
+		.field {
+			margin-bottom: 1rem;
+			margin-top: 1rem;
+		}
+
+		.full-name {
+			display: flex;
+			gap: 1rem;
+
+			& * {
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+				gap: 0.25rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<div class="page-width">
+			<form action="thankyou.html" method="get" name="form-name">
+				<div class="field">
+					<label for="text-name" class="field-label">Text</label>
+					<div class="field-help-text">Help text</div>
+					<input name="text-name" required type="text" id="text-name" class="field-input">
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</div>
+
+				<div class="field">
+					<label for="disabled-text-name" class="field-label">Disabled Text</label>
+					<div class="field-help-text">Help text</div>
+					<input disabled name="disabled-text-name" required type="text" id="disabled-text-name"
+						class="field-input">
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</div>
+
+				<div class="field">
+					<label for="number-name" class="field-label">Number</label>
+					<div class="field-help-text">Help text</div>
+					<input name="number-name" max="10" min="2" required step="2" type="number" id="number-name"
+						class="field-input">
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</div>
+
+				<div class="field">
+					<label for="email-name" class="field-label">Email</label>
+					<div class="field-help-text">Help text</div>
+					<input name="email-name" required type="email" id="email-name" class="field-input">
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</div>
+
+				<div class="field">
+					<label for="url-name" class="field-label">URL <span>(optional)</span></label>
+					<div class="field-help-text">Help text</div>
+					<input name="url-name" type="url" id="url-name" class="field-input">
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</div>
+
+				<div class="field">
+					<label for="select-name" class="field-label">Select</label>
+					<div class="field-help-text">Help text</div>
+					<select name="select-name" required type="text" id="select-name" class="field-input">
+						<option value="">Select&hellip;</option>
+						<option value="Value 1">Value 1</option>
+						<option value="Value 2">Value 2</option>
+						<option value="Value 3">Value 3</option>
+					</select>
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</div>
+
+				<fieldset class="field">
+					<legend class="field-label">Radio</legend>
+					<div class="field-help-text">Help text</div>
+					<div class="field-input-group">
+						<div>
+							<input name="radio-name" required type="radio" value="Radio 1" id="radio-name-1">
+							<label for="radio-name-1">Radio 1</label>
+						</div>
+						<div>
+							<input name="radio-name" required type="radio" value="Radio 2" id="radio-name-2">
+							<label for="radio-name-2">Radio 2</label>
+						</div>
+						<div>
+							<input name="radio-name" required type="radio" value="Radio 3" id="radio-name-3">
+							<label for="radio-name-3">Radio 3</label>
+						</div>
+					</div>
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</fieldset>
+
+				<div class="field">
+					<label for="text-id" class="field-label">File</label>
+					<div class="field-help-text">Help text</div>
+					<div>
+						<input name="file-id" required type="file" id="file-id" class="field-file-input">
+					</div>
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</div>
+
+				<fieldset class="field">
+					<legend class="field-label">Checkbox</legend>
+					<div class="field-help-text">Help text</div>
+					<div class="field-input-group">
+						<div class="field-input-row">
+							<input name="checkbox-name[]" type="checkbox" value="Checkbox 1" id="checkbox-1">
+							<label for="checkbox-1">Checkbox 1</label>
+						</div>
+						<div class="field-input-row">
+							<input name="checkbox-name[]" type="checkbox" value="Checkbox 2" id="checkbox-2">
+							<label for="checkbox-2">Checkbox 2</label>
+						</div>
+						<div class="field-input-row">
+							<input name="checkbox-name[]" type="checkbox" value="Checkbox 3" id="checkbox-3">
+							<label for="checkbox-3">Checkbox 3</label>
+						</div>
+					</div>
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</fieldset>
+
+				<fieldset class="field">
+					<legend class="field-label">Full Name</legend>
+					<div class="full-name">
+						<div>
+							<label for="first-name">First Name</label>
+							<input name="first-name" required type="text" id="first-name" class="field-input">
+						</div>
+						<div>
+							<label for="last-name">Last Name</label>
+							<input name="last-name" required type="text" id="last-name" class="field-input">
+						</div>
+					</div>
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</fieldset>
+
+				<fieldset class="field">
+					<legend class="field-label">Toggle</legend>
+					<div class="field-help-text">Help text</div>
+					<div class="field-input-group">
+						<div class="field-input-row">
+							<input name="radio-toggle" required type="radio" value="Show" id="radio-toggle-1">
+							<label for="radio-toggle-1">Show</label>
+						</div>
+						<div class="field-input-row">
+							<input name="radio-toggle" required type="radio" value="Hide" id="radio-toggle-2">
+							<label for="radio-toggle-2">Hide</label>
+						</div>
+					</div>
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</fieldset>
+
+				<div class="field" style="display: none;">
+					<label for="text-toggle">Toggle Text</label>
+					<div class="field-help-text">Help text</div>
+					<input name="text-toggle" required type="text" id="text-toggle" class="field-input" disabled>
+					<div class="field-help-text">Help text</div>
+					<div class="field-error-text"></div>
+				</div>
+
+				<p style="display: none;">
+					<button type="button" class="field-button" id="text-toggle-value">Toggle Value</button>
+				</p>
+
+				<sample-component label="Sample Component" prehelptext="Help text" posthelptext="Help text" required></sample-component>
+
+				<p>
+					<button type="button" class="field-button">Manual Submit</button>
+					<button type="reset" class="field-button">Reset</button>
+					<button class="field-button">Submit</button>
+				</p>
+			</form>
+		</div>
+	</main>
+
+	<script type="module">
+		import addFormValidation, { reportValidity } from './script.js';
+		import './sample-component.js';
+
+		const sampleComponent = document.querySelector('sample-component');
+
+		const textToggleEl = document.getElementById('text-toggle');
+		const textToggleValueEl = document.getElementById('text-toggle-value');
+		const textToggleValueWrapperEl = textToggleValueEl.closest('p');
+
+		function showTextToggle() {
+			const { fieldEl } = textToggleEl.formValidation;
+			textToggleEl.removeAttribute('disabled');
+			fieldEl.style.removeProperty('display');
+			textToggleValueWrapperEl.style.removeProperty('display');
+		}
+
+		function hideTextToggle() {
+			const { fieldEl } = textToggleEl.formValidation;
+			textToggleEl.setAttribute('disabled', '');
+			fieldEl.style.setProperty('display', 'none');
+			textToggleValueWrapperEl.style.setProperty('display', 'none');
+		}
+
+		addFormValidation(document.querySelector('form'), (element) => {
+			switch (element.getAttribute('name')) {
+				case 'checkbox-name[]':
+					element.formValidation.validators.push((inputEl) => {
+						const { fieldEl } = inputEl.formValidation;
+						const length = [...fieldEl.elements].filter(function (el) {
+							return el.checked;
+						}).length;
+						if (length === 0) {
+							inputEl.setCustomValidity('Select at least one of these options');
+						}
+					});
+					break;
+
+				case 'first-name':
+					element.formValidation.validators.push((inputEl) => {
+						if (inputEl.validity.valueMissing) {
+							inputEl.setCustomValidity('First Name is missing');
+						}
+					});
+					break;
+
+				case 'form-name':
+					textToggleValueEl.addEventListener('click', (event) => {
+						if (!textToggleEl.value) {
+							textToggleEl.value = '123';
+						} else {
+							textToggleEl.value = '';
+						}
+						textToggleEl.dispatchEvent(new Event('input'));
+						textToggleEl.focus();
+					});
+
+					element.querySelector('p:last-of-type button[type="button"]').addEventListener('click', () => {
+						if (reportValidity(element)) {
+							alert('SUBMIT');
+						}
+					});
+					element.addEventListener('reset', () => {
+						hideTextToggle();
+					});
+					break;
+
+				case 'last-name':
+					element.formValidation.validators.push((inputEl) => {
+						if (inputEl.validity.valueMissing) {
+							inputEl.setCustomValidity('Last Name is missing');
+						}
+					});
+					break;
+
+				case 'radio-toggle': {
+					switch (element.getAttribute('value')) {
+						case 'Show':
+							element.addEventListener('input', () => {
+								showTextToggle();
+							});
+							break;
+						case 'Hide':
+							element.addEventListener('input', () => {
+								hideTextToggle();
+							});
+							break;
+					}
+					break;
+				}
+
+				case 'text-name':
+					element.formValidation.validators.push((inputEl) => {
+						if (inputEl.value === '0') {
+							inputEl.setCustomValidity('Value must not be 0');
+						}
+					}, (inputEl) => {
+						if (inputEl.value === 'ABC') {
+							inputEl.setCustomValidity('Value must not be ABC');
+						}
+					});
+					break;
+			}
+		});
+	</script>
+</body>
+
+</html>

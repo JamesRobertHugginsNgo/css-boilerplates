@@ -3,7 +3,7 @@
 	flex-direction: column;
 	gap: 0.25rem;
 
-	&>.field-label {
+	& .field-label {
 		font-weight: bold;
 
 		&>span {
@@ -16,17 +16,17 @@
 		}
 	}
 
-	&>.field-help-text {
+	& .field-help-text {
 		color: #777777;
 		font-size: 0.875em;
 	}
 
-	&>.field-error-text {
+	& .field-error-text {
 		display: none;
 	}
 
 	&.field-error.show-field-error {
-		&>.field-label {
+		& .field-label {
 			color: darkred;
 		}
 
