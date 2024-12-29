@@ -22,7 +22,7 @@ customize for common use cases.
 - [page-width](./src/page-width)
 - [tab-list](./src/tab-list)
 
-## Versions
+## Alternate Versions
 
 - [github page](https://jamesroberthugginsngo.github.io/css-boilerplates/)
 - [github repo](https://github.com/JamesRobertHugginsNgo/css-boilerplates/tree/main)
