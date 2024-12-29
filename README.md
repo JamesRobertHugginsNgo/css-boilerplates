@@ -11,4 +11,4 @@ customize for common use cases.
 
 ## Boilerplates
 
-- [field-button](./src/field-button/)
+- [field-button](./src/field-button/README.md)
