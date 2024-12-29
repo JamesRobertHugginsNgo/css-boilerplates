@@ -1,8 +1,6 @@
 # field
 
-A form field CSS that style its label, help texts, error text and layout.
-
-Form input CSS is defined separately.
+A form field CSS that style its label, help texts, error text and layout. Form input CSS is defined separately.
 
 ## Links
 
