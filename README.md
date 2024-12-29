@@ -9,18 +9,18 @@ customize for common use cases.
 
 ## Boilerplates
 
-- [field](https://jamesroberthugginsngo.github.io/css-boilerplates/src/field)
-- [field-button](https://jamesroberthugginsngo.github.io/css-boilerplates/src/field-button)
-- [field-file-input](https://jamesroberthugginsngo.github.io/css-boilerplates/src/field-file-input)
-- [field-input](https://jamesroberthugginsngo.github.io/css-boilerplates/src/field-input)
-- [field-input-group](https://jamesroberthugginsngo.github.io/css-boilerplates/src/field-input-group)
-- [field-validation](https://jamesroberthugginsngo.github.io/css-boilerplates/src/field-validation)
-- [horizontal-list](https://jamesroberthugginsngo.github.io/css-boilerplates/src/horizontal-list)
-- [left-center-right](https://jamesroberthugginsngo.github.io/css-boilerplates/src/left-center-right)
-- [left-right](https://jamesroberthugginsngo.github.io/css-boilerplates/src/left-right)
-- [no-collapse](https://jamesroberthugginsngo.github.io/css-boilerplates/src/no-collapse)
-- [page-width](https://jamesroberthugginsngo.github.io/css-boilerplates/src/page-width)
-- [tab-list](https://jamesroberthugginsngo.github.io/css-boilerplates/src/tab-list)
+- [field](./src/field)
+- [field-button](./src/field-button)
+- [field-file-input](./src/field-file-input)
+- [field-input](./src/field-input)
+- [field-input-group](./src/field-input-group)
+- [field-validation](./src/field-validation)
+- [horizontal-list](./src/horizontal-list)
+- [left-center-right](./src/left-center-right)
+- [left-right](./src/left-right)
+- [no-collapse](./src/no-collapse)
+- [page-width](./src/page-width)
+- [tab-list](./src/tab-list)
 
 ## Links:
 
