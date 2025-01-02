@@ -196,7 +196,8 @@
 					<button type="button" class="field-button" id="text-toggle-value">Toggle Value</button>
 				</p>
 
-				<sample-component label="Sample Component" prehelptext="Help text" posthelptext="Help text" required></sample-component>
+				<sample-component name="sample-component" label="Sample Component" prehelptext="Help text"
+					posthelptext="Help text" required value="test"></sample-component>
 
 				<p>
 					<button type="button" class="field-button">Manual Submit</button>
@@ -208,7 +209,7 @@
 	</main>
 
 	<script type="module">
-		import addFormValidation, { reportValidity } from './script.js';
+		import { addFormValidation, reportValidity } from './script.js';
 		import './sample-component.js';
 
 		const sampleComponent = document.querySelector('sample-component');
@@ -234,7 +235,7 @@
 		addFormValidation(document.querySelector('form'), (element) => {
 			switch (element.getAttribute('name')) {
 				case 'checkbox-name[]':
-					element.formValidation.validators.push((inputEl) => {
+					element.formValidation.validator = (inputEl) => {
 						const { fieldEl } = inputEl.formValidation;
 						const length = [...fieldEl.elements].filter(function (el) {
 							return el.checked;
@@ -242,15 +243,15 @@
 						if (length === 0) {
 							inputEl.setCustomValidity('Select at least one of these options');
 						}
-					});
+					};
 					break;
 
 				case 'first-name':
-					element.formValidation.validators.push((inputEl) => {
+					element.formValidation.validator = (inputEl) => {
 						if (inputEl.validity.valueMissing) {
 							inputEl.setCustomValidity('First Name is missing');
 						}
-					});
+					};
 					break;
 
 				case 'form-name':
@@ -267,6 +268,11 @@
 					element.querySelector('p:last-of-type button[type="button"]').addEventListener('click', () => {
 						if (reportValidity(element)) {
 							alert('SUBMIT');
+
+							const formData = new FormData(element);
+							for (const entry of formData.entries()) {
+								console.log(entry);
+							}
 						}
 					});
 					element.addEventListener('reset', () => {
@@ -275,11 +281,11 @@
 					break;
 
 				case 'last-name':
-					element.formValidation.validators.push((inputEl) => {
+					element.formValidation.validator = (inputEl) => {
 						if (inputEl.validity.valueMissing) {
 							inputEl.setCustomValidity('Last Name is missing');
 						}
-					});
+					};
 					break;
 
 				case 'radio-toggle': {
@@ -299,15 +305,16 @@
 				}
 
 				case 'text-name':
-					element.formValidation.validators.push((inputEl) => {
+					element.formValidation.validator = (inputEl) => {
 						if (inputEl.value === '0') {
 							inputEl.setCustomValidity('Value must not be 0');
+							return;
 						}
-					}, (inputEl) => {
 						if (inputEl.value === 'ABC') {
 							inputEl.setCustomValidity('Value must not be ABC');
+							return;
 						}
-					});
+					};
 					break;
 			}
 		});

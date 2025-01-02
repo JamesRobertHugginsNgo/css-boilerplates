@@ -1,7 +1,15 @@
-import addFormValidation from './script.js';
+// REFERENCE:
+// - https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
+// - https://web.dev/articles/more-capable-form-controls#form-associated-custom-elements
 
-const templateElement = document.createElement('template');
-templateElement.innerHTML = `
+import addInputFormValidation from './scripts/add-input-form-validation.js';
+
+// ==
+// TEMPLATE
+// ==
+
+const templateEl = document.createElement('template');
+templateEl.innerHTML = `
 	<link rel="stylesheet" href="../field/style.css">
 	<link rel="stylesheet" href="../field-input/style.css">
 	<div class="field">
@@ -13,24 +21,39 @@ templateElement.innerHTML = `
 	</div>
 `;
 
+// ==
+// CLASS
+// ==
+
 class SampleComponent extends HTMLElement {
+
+	// STATIC PROPERTIES
+
 	static formAssociated = true;
 	static observedAttributes = [
 		'label',
 		'posthelptext',
 		'prehelptext',
-		'required'
+		'required',
+		'value'
 	];
 
+	// PRIVATE PROPERTIES
+
 	#elementInternals;
-	#inputEl;
+
 	#label;
-	#labelEl;
 	#postHelpText;
-	#postHelpTextEl;
 	#preHelpText;
-	#preHelpTextEl;
 	#required = false;
+	#value;
+
+	#inputEl;
+	#labelEl;
+	#postHelpTextEl;
+	#preHelpTextEl;
+
+	// PRIVATE METHOD
 
 	#setValidity() {
 		this.#elementInternals.setValidity(
@@ -38,6 +61,12 @@ class SampleComponent extends HTMLElement {
 			this.#inputEl.validationMessage,
 			this.#inputEl
 		);
+	}
+
+	// PUBLIC PROPERTIES
+
+	get form() {
+		return this.#elementInternals.form;
 	}
 
 	get formValidation() {
@@ -55,6 +84,18 @@ class SampleComponent extends HTMLElement {
 		} else {
 			this.#labelEl.style.setProperty('display', 'none');
 		}
+	}
+
+	get name() {
+		return this.getAttribute('name');
+	}
+	set name(newValue) {
+		if (!newValue) {
+			this.removeAttribute('name');
+			return;
+		}
+
+		this.setAttribute('name', newValue);
 	}
 
 	get postHelpText() {
@@ -98,6 +139,10 @@ class SampleComponent extends HTMLElement {
 		this.#setValidity();
 	}
 
+	get type() {
+		return this.localName;
+	}
+
 	get validity() {
 		return this.#elementInternals.validity;
 	}
@@ -105,6 +150,17 @@ class SampleComponent extends HTMLElement {
 	get validationMessage() {
 		return this.#elementInternals.validationMessage;
 	}
+
+	get value() {
+		return this.#value;
+	}
+	set value(newValue) {
+		this.#value = newValue;
+		this.#inputEl.value = this.#value;
+		this.#inputEl.dispatchEvent(new Event('input'));
+	}
+
+	// PUBLIC METHODS
 
 	checkValidity() {
 		return this.#elementInternals.checkValidity();
@@ -114,6 +170,8 @@ class SampleComponent extends HTMLElement {
 		return this.#elementInternals.reportValidity();
 	}
 
+	// LIFE CYCLE
+
 	constructor() {
 		super();
 
@@ -121,7 +179,7 @@ class SampleComponent extends HTMLElement {
 			mode: 'open',
 			delegatesFocus: true
 		});
-		this.shadowRoot.appendChild(templateElement.content.cloneNode(true));
+		this.shadowRoot.appendChild(templateEl.content.cloneNode(true));
 		this.#elementInternals = this.attachInternals();
 
 		this.#labelEl = this.shadowRoot.querySelector('label');
@@ -131,19 +189,20 @@ class SampleComponent extends HTMLElement {
 		this.#postHelpTextEl = postHelpTextEl;
 
 		this.#inputEl = this.shadowRoot.querySelector('input');
-		addFormValidation(this.#inputEl);
+		addInputFormValidation(this.#inputEl);
 		this.#setValidity();
 		this.#inputEl.addEventListener('input', () => {
-			this.#elementInternals.setFormValue(this.#inputEl.value);
+			this.#value = this.#inputEl.value;
+			this.#elementInternals.setFormValue(this.#value);
 			this.#setValidity();
 		});
 	}
 
-	connectedCallback() { }
+	// connectedCallback() { }
 
-	disconnectedCallback() { }
+	// disconnectedCallback() { }
 
-	adoptedCallback() { }
+	// adoptedCallback() { }
 
 	attributeChangedCallback(name, oldValue, newValue) {
 		switch (name) {
@@ -159,8 +218,24 @@ class SampleComponent extends HTMLElement {
 			case 'required':
 				this.required = newValue !== undefined;
 				break;
+			case 'value':
+				this.value = newValue;
+				break;
 		}
 	}
+
+	// formAssociatedCallback(formEL) {}
+
+	formResetCallback() {
+		this.#inputEl.value = this.getAttribute('value') || '';
+		this.#setValidity();
+	}
+
+	// formStateRestoreCallback(state, mode) {}
 }
+
+// ==
+// DEFINE
+// ==
 
 customElements.define('sample-component', SampleComponent);

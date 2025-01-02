@@ -2,7 +2,9 @@
 
 ## Files
 
-- [script.js](./script.js) (Boilerplate)
+- [scripts/add-form-validation.js](./scripts/add-form-validation.js) (Boilerplate)
+- [scripts/add-input-form-validation.js](./scripts/add-input-form-validation.js) (Boilerplate)
+- [script.js](./script.js)
 - [sample.html](./sample.html)
 - [sample-component.js](./sample-component.js)
 
